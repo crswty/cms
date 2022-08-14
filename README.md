@@ -16,6 +16,7 @@ as you want and don't worry about database / hosting costs
 
 * Auth
 * Caching
+* Migration
 
 
 ## Getting started
@@ -46,8 +47,21 @@ For an example of this see `config/gcloud`. Firstly configure the bucket name in
 replace `credentials.json` with your credential file then run the following.
 
 ```shell
-podman run -p 8080:8080 \
+docker run -p 8080:8080 \
   -v "$(pwd)"/examples/gcloud:/etc/cms \
   crswty/cms:latest
 ```
 
+## Development
+
+Start the API
+```shell
+cd api
+go run cmd/main.go
+```
+
+Start the UI
+```shell
+cd web
+yarn start
+```
