@@ -1,0 +1,70 @@
+types:
+  - name: users
+    id: id
+    schema: >
+      {
+        "$id": "http://example.com/schema/my-test-schema",
+        "$schema": "http://json-schema.org/draft-06/schema",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "phone": {
+            "type": "object",
+            "properties": {
+              "home": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+  - name: pets
+    id: id
+    schema: >
+      {
+        "$id": "http://example.com/schema/my-test-schema",
+        "$schema": "http://json-schema.org/draft-06/schema",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "species": {
+            "type": "string"
+          },
+          "legs": {
+            "type": "number"
+          }
+        }
+      }
+provider:
+  name: memory
+  initialData:
+    - type: users
+      id: 1
+      data: {"id": 1, "name": "chris", "email": "chris@example.com", "phone": {"home": 12345}}
+    - type: users
+      id: 2
+      data: {"id": "2", "name": "Fred", "email": "fred@example.com"}
+    - type: users
+      id: 3
+      data: {"id": "3", "name": "Helen", "email": "helen@example.com"}
+    - type: pets
+      id: 1
+      data: {"id": "1", "species": "cow", legs: 4}
+    - type: pets
+      id: 2
+      data: {"id": "2", "species": "trex", legs: 2}
+#provider:
+#  name: gcs
+#  credentialsFile: /tmp/gcs-creds.json
+#  bucket: cms-test-bucket

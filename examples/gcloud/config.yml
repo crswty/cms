@@ -1,0 +1,53 @@
+
+types:
+  - name: users
+    id: id
+    schema: >
+      {
+        "$id": "http://example.com/schema/my-test-schema",
+        "$schema": "http://json-schema.org/draft-06/schema",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "phone": {
+            "type": "object",
+            "properties": {
+              "home": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+  - name: pets
+    id: id
+    schema: >
+      {
+        "$id": "http://example.com/schema/my-test-schema",
+        "$schema": "http://json-schema.org/draft-06/schema",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "species": {
+            "type": "string"
+          },
+          "legs": {
+            "type": "number"
+          }
+        }
+      }
+provider:
+  name: gcs
+  credentialsFile: /etc/cms/ecs/credentials.json
+  bucket: cms-test-bucket
