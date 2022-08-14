@@ -30,7 +30,7 @@ docker run -p 8080:8080 \
   crswty/cms:latest
 ```
 
-This will start the admin ui at `http://localhost:8080/admin` and the api at `http://localhost:8080/admin`.
+This will start the admin ui at `http://localhost:8080/admin` and the api at `http://localhost:8080/api`.
 You should be able to add/remove/edit records in the admin UI and see those changes in the api with:
 ```
 curl http://localhost:8080/api/users
